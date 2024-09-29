@@ -19,14 +19,14 @@ const Hero = () => {
       }}
     >
       <div style={{ maxWidth: '600px' }}>  {/* Limit width for better text formatting */}
-        <h1 style={{ 
+        <p style={{ 
           fontSize: '4rem',        // Large font size
           fontWeight: 'bold',      // Bold for emphasis
           lineHeight: '1.2',       // Spacing between lines
           textShadow: '2px 2px 4px rgba(0, 0, 0, 0.1)' // Adds a text shadow for better contrast
         }}>
           Get the Best Closet in Minutes
-        </h1>
+        </p>
       </div>
     </div>
   );
