@@ -1,91 +1,53 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React from 'react';
+import { AiOutlineSearch, AiOutlineUser, AiOutlineHeart, AiOutlineShoppingCart } from 'react-icons/ai';
+import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Navbar = () => {
-    const [searchQuery, setSearchQuery] = useState('');
+  return (
+    <nav className="bg-gradient-to-r from-gray-400 to-gray-200 p-4">
+      <div className="container mx-auto flex justify-between items-center flex-wrap">
+        {/* Logo and Name */}
+        <div className="text-black text-2xl font-bold mb-4 sm:mb-0">
+          Fast Closet
+        </div>
 
-    const handleSearch = (e) => {
-        e.preventDefault();
-        // Handle the search logic here
-        console.log('Search query:', searchQuery);
-    };
+        {/* Search Bar */}
+        <div className="relative w-full sm:w-1/3 mb-4 sm:mb-0">
+          <input
+            type="text"
+            className="w-full p-2 pl-4 rounded-full border-none focus:outline-none shadow-md"
+            placeholder="Find the best"
+          />
+          <button className="absolute right-0 top-0 h-full px-4 text-white bg-gray-600 rounded-r-full shadow-md hover:bg-gray-500">
+            <AiOutlineSearch />
+          </button>
+        </div>
 
-    return (
-        <nav style={{ backgroundColor: '#F9F5F1' }} className="shadow-lg">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div className="flex justify-between items-center h-16">
-                    {/* Brand Name */}
-                    <div className="flex items-center">
-                        <Link to="/" className="text-gray-900 font-semibold text-2xl tracking-wide">
-                            Fast Closet
-                        </Link>
-                    </div>
+        {/* User Actions */}
+        <div className="flex space-x-6 text-black text-lg items-center">
+          <Link to="/account" className="flex items-center cursor-pointer hover:text-gray-500 transition-colors">
+            <AiOutlineUser className="mr-1" /> Account
+          </Link>
+          <Link to="/favorites" className="flex items-center cursor-pointer hover:text-gray-500 transition-colors">
+            <AiOutlineHeart className="mr-1" /> Favorites
+          </Link>
+          <Link to="/cart" className="flex items-center cursor-pointer hover:text-gray-500 transition-colors">
+            <AiOutlineShoppingCart className="mr-1" /> Cart
+          </Link>
+        </div>
+      </div>
 
-                    {/* Desktop Menu */}
-                    <div className="flex space-x-8 items-center">
-                        <Link
-                            to="/"
-                            className="text-gray-900 hover:bg-gray-200 hover:text-gray-900 px-4 py-2 rounded-md text-md font-medium transition-colors duration-300"
-                        >
-                            Home
-                        </Link>
-
-                        {/* Categories Dropdown */}
-                        <div className="relative group">
-                            <button className="text-gray-900 hover:bg-gray-200 hover:text-gray-900 px-4 py-2 rounded-md text-md font-medium transition-colors duration-300">
-                                Categories
-                            </button>
-                            <div className="absolute hidden group-hover:block bg-white shadow-md text-gray-900 rounded-md mt-2 py-2">
-                                <Link
-                                    to="/categories/men"
-                                    className="block px-4 py-2 hover:bg-gray-200 transition-colors duration-300"
-                                >
-                                    Men
-                                </Link>
-                                <Link
-                                    to="/categories/women"
-                                    className="block px-4 py-2 hover:bg-gray-200 transition-colors duration-300"
-                                >
-                                    Women
-                                </Link>
-                                <Link
-                                    to="/categories/kids"
-                                    className="block px-4 py-2 hover:bg-gray-200 transition-colors duration-300"
-                                >
-                                    Kids
-                                </Link>
-                            </div>
-                        </div>
-
-                        {/* Search Bar */}
-                        <form onSubmit={handleSearch} className="relative flex items-center">
-                            <input
-                                type="text"
-                                value={searchQuery}
-                                onChange={(e) => setSearchQuery(e.target.value)}
-                                placeholder="Search for products"
-                                className="w-72 px-4 py-2 rounded-l-md bg-gray-100 text-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-300 transition-all"
-                            />
-                            <button
-                                type="submit"
-                                className="px-5 py-2 bg-gray-900 text-white rounded-r-md hover:bg-gray-700 transition-colors duration-300"
-                            >
-                                Search
-                            </button>
-                        </form>
-
-                        {/* Login Button */}
-                        <Link
-                            to="/login"
-                            className="text-gray-900 hover:bg-gray-200 hover:text-gray-900 px-4 py-2 rounded-md text-md font-medium transition-colors duration-300"
-                        >
-                            Login
-                        </Link>
-                    </div>
-                </div>
-            </div>
-        </nav>
-    );
+      {/* Categories */}
+      <div className="container mx-auto mt-4 flex justify-center flex-wrap space-x-8 text-black text-lg">
+        <Link to="/men" className="hover:text-gray-500 cursor-pointer transition-colors">Men</Link>
+        <Link to="/women" className="hover:text-gray-500 cursor-pointer transition-colors">Women</Link>
+        <Link to="/kids" className="hover:text-gray-500 cursor-pointer transition-colors">Kids</Link>
+        <Link to="/bags" className="hover:text-gray-500 cursor-pointer transition-colors">Bags</Link>
+        <Link to="/footwear" className="hover:text-gray-500 cursor-pointer transition-colors">Footwear</Link>
+        <Link to="/casuals" className="hover:text-gray-500 cursor-pointer transition-colors">Casuals</Link>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
