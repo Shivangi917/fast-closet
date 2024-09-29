@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Navbar = () => {
   return (
-    <nav className="bg-gradient-to-r from-gray-400 to-gray-200 p-4">
+    <nav className="bg-gradient-to-r from-gray-400 to-gray-100 p-4">
       <div className="container mx-auto flex justify-between items-center flex-wrap">
         {/* Logo and Name */}
         <div className="text-black text-2xl font-bold mb-4 sm:mb-0">

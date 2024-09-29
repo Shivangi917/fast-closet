@@ -1,6 +1,7 @@
 import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
-import Navbar from "./Components/Navbar/Navbar"; // Adjust the import path as necessary
+import Navbar from "./Components/Navbar/Navbar"; 
+import Homepage from "./Components/Homepage/Homepage";
 
 // Dummy component for the category pages
 const Home = () => <div className="text-center mt-10"><h1>Welcome to Fast Closet</h1></div>;
@@ -22,7 +23,7 @@ const App = () => {
             
             {/* Routes for different pages */}
             <Routes>
-                <Route path="/" element={<Home />} />
+                <Route path="/" element={<Homepage />} />
                 <Route path="/men" element={<Men />} />
                 <Route path="/women" element={<Women />} />
                 <Route path="/kids" element={<Kids />} />
