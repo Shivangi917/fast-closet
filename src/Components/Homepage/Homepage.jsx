@@ -1,7 +1,8 @@
 import React from 'react';
 import Hero from './Hero'; 
 import ProductShowcase from './ProductShowcase';
-import Features from './Features'
+import Features from './Features';
+import Footer from './Footer';
 
 const Homepage = () => {
     return (
@@ -9,6 +10,7 @@ const Homepage = () => {
             <Hero />
             <ProductShowcase/>
             <Features/>
+            <Footer/>
         </div>
     );
 };

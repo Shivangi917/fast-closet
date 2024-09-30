@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom'; // Import Link for navigation
 
 const Navbar = () => {
   return (
-    <nav className="bg-gradient-to-r from-gray-400 to-gray-100 p-4">
+    <nav className="bg-gradient-to-r bg-white p-4">
       <div className="container mx-auto flex justify-between items-center flex-wrap">
         {/* Logo and Name */}
         <div className="text-black text-2xl font-bold mb-4 sm:mb-0">
@@ -15,7 +15,7 @@ const Navbar = () => {
         <div className="relative w-full sm:w-1/3 mb-4 sm:mb-0">
           <input
             type="text"
-            className="w-full p-2 pl-4 rounded-full border-none focus:outline-none shadow-md"
+            className="w-full p-2 pl-4 rounded-full border-none focus:outline-none shadow-xl"
             placeholder="Find the best"
           />
           <button className="absolute right-0 top-0 h-full px-4 text-white bg-gray-600 rounded-r-full shadow-md hover:bg-gray-500">

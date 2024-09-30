@@ -2,6 +2,9 @@ import React from "react";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Navbar from "./Components/Navbar/Navbar"; 
 import Homepage from "./Components/Homepage/Homepage";
+import 'slick-carousel/slick/slick.css';
+import 'slick-carousel/slick/slick-theme.css';
+
 
 // Dummy component for the category pages
 const Home = () => <div className="text-center mt-10"><h1>Welcome to Fast Closet</h1></div>;
@@ -30,9 +33,9 @@ const App = () => {
                 <Route path="/bags" element={<Bags />} />
                 <Route path="/footwear" element={<Footwear />} />
                 <Route path="/casuals" element={<Casuals />} />
-                <Route path="/account" element={<Account />} />       {/* Route for Account */}
-                <Route path="/favorites" element={<Favorites />} />   {/* Route for Favorites */}
-                <Route path="/cart" element={<Cart />} />             {/* Route for Shopping Cart */}
+                <Route path="/account" element={<Account />} />      
+                <Route path="/favorites" element={<Favorites />} />  
+                <Route path="/cart" element={<Cart />} />            
             </Routes>
         </Router>
     );
